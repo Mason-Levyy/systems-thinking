@@ -1,0 +1,60 @@
+# Coffee Shop System
+
+## Components:
+- Barista
+- Customer
+- POS System
+- Ingredients (Coffee, Milk, Syrups, etc.)
+- Tools (Espresso Machine, Grinder, etc.)
+- Inventory (Cups, Napkins, etc.)
+- Coffee Shop (Location, Hours, Ambiance, Interior Design, etc.)
+
+In systems thinking, a coffee shop is a complex web of interconnected parts where resources accumulate and move based on various pressures. Here is the completed breakdown of those stocks, flows, and loops.
+
+---
+
+## Stocks and Flows
+
+**Stocks** are the accumulations of resources in the system at any given time. **Flows** are the actions that increase (inflow) or decrease (outflow) those stocks.
+
+### Stocks:
+
+* **Inventory Levels:** The physical amount of coffee beans, milk cartons, and syrups currently behind the counter.
+* **Order Queue:** The number of pending drink orders waiting to be fulfilled by the barista.
+* **Cash Reserves:** The total amount of money in the POS system or bank account.
+* **Customer Density:** The number of people currently inside the shop's physical space.
+
+### Flows:
+
+* **Procurement (Inflow):** Buying more beans and supplies from wholesalers to increase inventory.
+* **Sales/Consumption (Outflow):** Baristas using ingredients to make drinks, thereby decreasing inventory.
+* **Order Placement (Inflow):** Customers paying for drinks, which increases the order queue and cash reserves.
+* **Order Fulfillment (Outflow):** Completing and handing off drinks, which decreases the order queue.
+
+---
+
+## Feedback Loops
+
+### Positive Feedback Loop (Reinforcing):
+
+A reinforcing loop where a change in one direction leads to even more change in that same direction.
+
+* **The "Word of Mouth" Loop:**
+1. **High Ambiance/Quality** leads to increased **Customer Satisfaction**.
+2. Satisfied customers leave **Positive Reviews** or tell friends.
+3. This increases **Customer Inflow** (New Customers).
+4. Higher revenue allows for better **Ambiance/Quality** (better beans, nicer decor), repeating the cycle and leading to exponential growth.
+
+
+
+### Negative Feedback Loop (Balancing):
+
+A balancing loop that seeks to keep the system in a state of equilibrium or stability.
+
+* **The "Wait Time" Regulator:**
+1. A high **Order Queue** leads to long **Wait Times**.
+2. Long wait times act as a "bottleneck" that discourages new customers from entering the shop or joining the line (**Decreased Inflow**).
+3. As fewer people join the line, the Barista is able to work through the existing queue.
+4. The **Order Queue** eventually shrinks back to a manageable level, stabilizing the system.
+
+## Demo Coffee Shop System [Link]
