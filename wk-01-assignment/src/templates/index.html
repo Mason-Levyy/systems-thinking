@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop System Demo</title>
+    <meta name="description" content="Interactive visualization of a coffee shop system using systems thinking concepts: stocks, flows, and feedback loops.">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <div class="hero-icon">☕</div>
+            <h1>Coffee Shop System</h1>
+            <p class="subtitle">A Systems Thinking Visualization</p>
+            <p class="description">
+                Explore the dynamic relationships between stocks, flows, and feedback loops 
+                that drive a coffee shop's operations through animated visualizations.
+            </p>
+        </header>
+
+        <section class="cards-grid">
+            {% for id, anim in animations.items() %}
+            <a href="{{ url_for('animation', animation_id=id) }}" class="card">
+                <div class="card-icon">
+                    {% if 'stocks' in id %}📊{% elif 'flows' in id %}🔄{% elif 'positive' in id %}📈{% elif 'negative' in id %}⚖️{% else %}🎯{% endif %}
+                </div>
+                <h2>{{ anim.title }}</h2>
+                <p>{{ anim.description }}</p>
+                <span class="card-arrow">→</span>
+            </a>
+            {% endfor %}
+        </section>
+
+        <footer>
+            <p class="footer-text">
+                Built with <a href="https://www.manim.community/" target="_blank">Manim</a> 
+                & <a href="https://flask.palletsprojects.com/" target="_blank">Flask</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

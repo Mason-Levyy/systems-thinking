@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ animation.title }} | Coffee Shop System</title>
+    <meta name="description" content="{{ animation.description }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="nav-bar">
+            <a href="{{ url_for('index') }}" class="back-link">← Back to Home</a>
+        </nav>
+
+        <main class="animation-page">
+            <header class="animation-header">
+                <h1>{{ animation.title }}</h1>
+                <p class="animation-description">{{ animation.description }}</p>
+            </header>
+
+            <div class="video-container">
+                {% if video_url %}
+                <video controls autoplay loop class="animation-video">
+                    <source src="{{ video_url }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                {% else %}
+                <div class="video-placeholder">
+                    <div class="loading-spinner"></div>
+                    <p>Rendering animation...</p>
+                    <p class="loading-note">This may take a moment on first load.</p>
+                </div>
+                {% endif %}
+            </div>
+
+            <section class="animation-info">
+                {% if 'stocks-flows' in animation_id %}
+                <h2>Stocks & Flows Dynamics</h2>
+                <p>Watch how <strong>stocks</strong> (accumulations) change dynamically based on <strong>flows</strong>
+                    (rates of change).</p>
+                <div class="flow-columns">
+                    <div class="flow-column inflows">
+                        <h3>Stocks</h3>
+                        <ul>
+                            <li><strong>Inventory:</strong> Coffee beans, milk, supplies</li>
+                            <li><strong>Orders:</strong> Pending drink orders</li>
+                            <li><strong>Cash:</strong> Revenue and reserves</li>
+                            <li><strong>Customers:</strong> People in the shop</li>
+                        </ul>
+                    </div>
+                    <div class="flow-column outflows">
+                        <h3>Flows</h3>
+                        <ul>
+                            <li><strong>Inflows (+):</strong> Procurement, Arrivals, Sales</li>
+                            <li><strong>Outflows (−):</strong> Consumption, Fulfillment, Departures</li>
+                        </ul>
+                    </div>
+                </div>
+
+                {% elif 'feedback-loops' in animation_id %}
+                <h2>Feedback Loops</h2>
+                <p>Systems thinking identifies two fundamental loop types:</p>
+                <div class="flow-columns">
+                    <div class="flow-column inflows">
+                        <h3>Reinforcing (+)</h3>
+                        <p>"Word of Mouth" - Growth compounds!</p>
+                        <p>Quality → Satisfaction → Reviews → Customers → Revenue → Quality</p>
+                    </div>
+                    <div class="flow-column outflows">
+                        <h3>Balancing (−)</h3>
+                        <p>"Wait Time Regulator" - System self-corrects!</p>
+                        <p>Queue ↑ → Wait ↑ → Customers Leave → Queue ↓</p>
+                    </div>
+                </div>
+
+                {% else %}
+                <h2>Coffee Shop: System in Action</h2>
+                <p>This top-down simulation shows all components working together:</p>
+                <ul>
+                    <li><strong>Entrance → Queue → POS → Barista → Pickup → Exit</strong></li>
+                    <li>Watch customers flow through while inventory depletes and cash grows!</li>
+                </ul>
+                {% endif %}
+            </section>
+        </main>
+
+        <footer>
+            <p class="footer-text">Coffee Shop System Demo | Systems Thinking</p>
+        </footer>
+    </div>
+</body>
+
+</html>
